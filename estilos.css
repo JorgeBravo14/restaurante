@@ -1,0 +1,152 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía y fondo */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: #b71c1c;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Carrusel */
+.carrusel {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  animation: slideIn 1.5s ease;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: cambio 12s infinite;
+}
+
+.slide {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.navegacion-manual {
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.manual-btn:hover {
+  background: white;
+}
+
+#slide1:checked ~ .first {
+  margin-left: 0;
+}
+#slide2:checked ~ .first {
+  margin-left: -100%;
+}
+#slide3:checked ~ .first {
+  margin-left: -200%;
+}
+
+/* Sección presentación */
+.presentacion {
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff3e0;
+  animation: fadeUp 2s ease;
+}
+
+.presentacion h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.presentacion p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #b71c1c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes cambio {
+  0%, 20% { margin-left: 0; }
+  25%, 45% { margin-left: -100%; }
+  50%, 70% { margin-left: -200%; }
+  75%, 100% { margin-left: 0; }
+}
